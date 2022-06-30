@@ -29,7 +29,7 @@ che gli le lettere della parola, trasformata la parola in array, devono essere u
 
 
 //1. inizio a creare la mia funzione
-function palindromeCheck(userWord) {
+function palindromeCheck() {
     //il mio default sarà false, poichè la maggior parte delle parole sono non palindrome.. anche se chiedendo all'utente la verifica di questo, non saprei
     let result = false;
     let word = '';
@@ -38,6 +38,10 @@ function palindromeCheck(userWord) {
     }
     if (word == userWord) {
         result = true;
+        console.log(` la parola ${userWord} è palindroma!`)
+    } else {
+
+        console.log(` la parola ${userWord} non è palindroma!`)
     }
     console.log(word)
     console.log(userWord)
@@ -48,4 +52,3 @@ function palindromeCheck(userWord) {
 const userWord = prompt('Inserisci qui una parola, il programma verificherà se sia palindroma o meno!', 'annanna');
 
 const wordCheck = palindromeCheck(userWord);
-// console.log(wordCheck)
