@@ -29,20 +29,27 @@ che gli le lettere della parola, trasformata la parola in array, devono essere u
 
 
 //1. inizio a creare la mia funzione
+/**
+ * 
+ * @param {word} word la parola detta dall'utente
+ * @returns se sia palindroma o meno
+ */
 function palindromeCheck(word) {
     //il mio default sarà false, poichè la maggior parte delle parole sono non palindrome.. anche se chiedendo all'utente la verifica di questo, non saprei
     let reverseWord = '';
+    //inverto ogni lettera della parola
     for (let i = userWord.length - 1; i >= 0; i--) {
         reverseWord += userWord[i];
     }
-
+    //sfrutto la proprietà degli operatori, per cui mi restituirà un valore di return vero o falso
     return userWord === reverseWord;
 }
+//creo variabile contenitore della parola inserita dall'utente
 const userWord = prompt('Inserisci qui una parola, il programma verificherà se sia palindroma o meno!', 'annanna').trim();
 const finalResult = document.getElementById('palindrome-result');
-
+//costruisco il messaggio 
 let message = `La parola ${userWord}`;
-message += palindromeCheck(userWord) ? 'è palindroma!' : ' non è palindroma!'
+//sfrutto il ternario per far figurare un messaggio o l'altro in console, invocando direttamente qui la funzione
+message += palindromeCheck(userWord) ? ' è palindroma!' : ' non è palindroma!'
 console.log(message)
 
-const wordCheck = palindromeCheck(userWord);
