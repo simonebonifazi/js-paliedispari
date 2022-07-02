@@ -26,31 +26,12 @@ c) questa funzione mi deve restituire qualcosa(result)?
 4. stampo in console il risultato"
 */
 
-//0.
-const userFirstChoise = prompt('Scegli pari o dispari', 'pari');
-console.log("l'utente scelgie : " + userFirstChoise)
-const userSecondChoise = parseInt(prompt('Scegli un numero da 1 a 5', '4'));
-console.log("l'utente sceglie il numero : " + userSecondChoise)
-//valido risposta utente
-while (isNaN(userSecondChoise) || userSecondChoise < 1 || userSecondChoise > 5) {
-    alert('devi inserire un numero per continuare. leggi attentamente e ritenta.')
-    userSecondChoise = parseInt(prompt('inserisci un numero da 1 a 5', '2'))
-}
-
 //1. ; 1.1 a) b) c)
 function getCpuRandomNumberFromOneToFive(min = 1, max = 5) {
     let number = Math.floor(Math.random() * (max + 1 - min)) + min;
     return number;
 }
-//1.2 invoco la funzione
-const cpuNumber = getCpuRandomNumberFromOneToFive();
-console.log('il computer pesca il numero: ' + cpuNumber)
 
-//2. 
-let sum = userSecondChoise + cpuNumber;
-console.log('la somma dei due numeri è: ' + sum)
-
-//3. creazione funzione che stabilisca se questo valore sia pari o dispari
 function isEvenOrOdds() {
     let result = '';
     if (sum % 2 === 0) {
@@ -61,6 +42,32 @@ function isEvenOrOdds() {
     }
     return result;
 }
+//0.
+let userFirstChoise = prompt('Scegli pari o dispari', 'pari').trim().toLowerCase();
+//valido l'inserimento dati continuando a chiederlo finchè non risponde a modo
+while (userFirstChoise !== 'pari' && userFirstChoise !== 'dispari') {
+    prompt('Scegli pari o dispari', 'pari').trim().toLowerCase();
+}
+console.log("l'utente scelgie : " + userFirstChoise);
+
+let userSecondChoise = parseInt(prompt('Scegli un numero da 1 a 5', '4'));
+console.log("l'utente sceglie il numero : " + userSecondChoise)
+//valido risposta utente
+while (isNaN(userSecondChoise) || userSecondChoise < 1 || userSecondChoise > 5) {
+    alert('devi inserire un numero per continuare. leggi attentamente e ritenta.')
+    userSecondChoise = parseInt(prompt('inserisci un numero da 1 a 5', '2'))
+}
+
+//SVOLGIMENTO//
+//1.2 invoco la funzione
+const cpuNumber = getCpuRandomNumberFromOneToFive();
+console.log('il computer pesca il numero: ' + cpuNumber)
+
+//2. 
+let sum = userSecondChoise + cpuNumber;
+console.log('la somma dei due numeri è: ' + sum)
+
+//3. creazione funzione che stabilisca se questo valore sia pari o dispari
 //3.2 invoco la funzione
 const evenOrOdds = isEvenOrOdds()
 console.log('la somma è: ' + evenOrOdds)
