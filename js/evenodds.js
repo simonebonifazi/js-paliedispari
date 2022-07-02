@@ -26,21 +26,15 @@ c) questa funzione mi deve restituire qualcosa(result)?
 4. stampo in console il risultato"
 */
 
-//1. ; 1.1 a) b) c)
+// creo la funzione per generare un numero casuale per il computer, con default da 1 a 5
 function getCpuRandomNumberFromOneToFive(min = 1, max = 5) {
     let number = Math.floor(Math.random() * (max + 1 - min)) + min;
     return number;
 }
-
-function isEvenOrOdds() {
-    let result = '';
-    if (sum % 2 === 0) {
-        result = 'pari';
-    } else {
-
-        result = 'dispari';
-    }
-    return result;
+// creo la funzione per determinare se la funzione sia pari o dispari
+function isEven(number) {
+    //rifattorizzata significa: dammi il contrario del (!)... per cui :falso, se da modulo (number%2) , vero se non me lo da; sempre perchè l'operatore implicitamente verifica vero o falso 
+    return !(number % 2);
 }
 //0.
 let userFirstChoise = prompt('Scegli pari o dispari', 'pari').trim().toLowerCase();
@@ -69,7 +63,7 @@ console.log('la somma dei due numeri è: ' + sum)
 
 //3. creazione funzione che stabilisca se questo valore sia pari o dispari
 //3.2 invoco la funzione
-const evenOrOdds = isEvenOrOdds()
+const evenOrOdds = isEven(userSecondChoise)
 console.log('la somma è: ' + evenOrOdds)
 
 //4. dichiaro il vincitore
